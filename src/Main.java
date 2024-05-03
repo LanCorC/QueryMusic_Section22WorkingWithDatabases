@@ -41,27 +41,7 @@ public class Main {
             ) {
             ResultSet resultSet = statement.executeQuery(query);
 
-            var meta = resultSet.getMetaData();
-//            for(int i = 1; i <= meta.getColumnCount(); i++) {
-//                System.out.printf("%d, %s, %s%n",
-//                        i,
-//                        meta.getColumnClassName(i),
-//                        meta.getColumnTypeName(i)
-//                        );
-//            }
-            System.out.println("=".repeat(15));
 
-            for(int i = 1; i <= meta.getColumnCount(); i++) {
-                System.out.printf("%-15s", meta.getColumnName(i).toUpperCase());
-            }
-            System.out.println();
-
-            while(resultSet.next()) {
-                for(int i = 1; i <= meta.getColumnCount(); i++) {
-                    System.out.printf("%-15s", resultSet.getString(i));
-                }
-                System.out.println();
-            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
