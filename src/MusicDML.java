@@ -1,3 +1,4 @@
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 public class MusicDML {
@@ -14,9 +15,10 @@ public class MusicDML {
             String columnName = "artist_name";
             String columnValue = "Bob Dylan";
             if(!executeSelect(statement, tableName, columnName, columnValue)) {
-                System.out.println("Maybe we should add this record");
-                insertRecord(statement, tableName, new String[]{columnName},
-                        new String[]{columnValue});
+                insertArtistAlbum(statement, columnValue, columnValue);
+            } else {
+//                deleteRecord(statement, tableName, columnName, columnValue);
+                updateRecord(statement, tableName, columnName, columnValue, columnName, columnValue.toUpperCase());
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -68,5 +70,69 @@ public class MusicDML {
             executeSelect(statement, table, columnNames[0], columnValues[0]);
         }
         return recordsInserted>0;
+    }
+
+    public static boolean deleteRecord(Statement statement, String table, String columnName, String columnValue) throws SQLException {
+        String query = "DELETE FROM %s WHERE %s='%s'"
+                .formatted(table, columnName, columnValue);
+        System.out.println(query);
+        statement.execute(query);
+        int recordsDeleted = statement.getUpdateCount();
+        if(recordsDeleted > 0) {
+            executeSelect(statement, table, columnName, columnValue);
+        }
+
+        return recordsDeleted > 0;
+    }
+
+    public static boolean updateRecord(Statement statement, String table, String matchedCol, String matchedVal, String updatedCol, String updatedVal) throws SQLException {
+        String query = "UPDATE %s SET %s='%s' WHERE %s='%s'"
+                .formatted(table, updatedCol, updatedVal, matchedCol, matchedVal);
+        System.out.println(query);
+        statement.execute(query);
+        int recordsUpdated = statement.getUpdateCount();
+        if(recordsUpdated > 0) {
+            executeSelect(statement, table, updatedCol, updatedVal);
+        }
+        return recordsUpdated > 0;
+    }
+
+    public static void insertArtistAlbum(Statement statement,
+                                         String artistName,
+                                         String albumName)
+        throws SQLException {
+        String artistInsert =  "INSERT INTO music.artists (artist_name) VALUES (%s)"
+                .formatted(statement.enquoteLiteral(artistName));
+        System.out.println(artistInsert);
+        statement.execute(artistInsert, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = statement.getGeneratedKeys();
+        int artistId = (rs != null && rs.next() ? rs.getInt(1) : -1);
+        String albumInsert = ("INSERT INTO music.albums (album_name, artist_id)" +
+                " VALUES (%s, %d)")
+                .formatted(statement.enquoteLiteral(albumName), artistId);
+        System.out.println(albumInsert);
+        statement.execute(albumInsert, Statement.RETURN_GENERATED_KEYS);
+        rs = statement.getGeneratedKeys();
+        int albumId = (rs != null && rs.next() ? rs.getInt(1) : -1);
+
+        String[] songs = new String[]{
+                "You're No Goo",
+                "Talkin' New York",
+                "In My Time of Dyin'",
+                "Man of Constant Sorrow",
+                "Fixin' to Die",
+                "Pretty Peggy-O",
+                "Highway 51 Blues" };
+
+        String songInsert = "INSERT INTO music.songs " +
+                "(track_number, song_title, album_id) VALUES (%d, %s, %d)";
+        for(int i = 0; i < songs.length; i++) {
+            String songQuery = songInsert.formatted(i + 1,
+                    statement.enquoteLiteral(songs[i]), albumId);
+            System.out.println(songQuery);
+            statement.execute(songQuery);
+        }
+        executeSelect(statement, "music.albumview",
+                "album_name", "Bob Dylan");
     }
 }

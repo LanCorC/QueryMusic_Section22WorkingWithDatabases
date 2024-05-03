@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37d2802a-5eaa-4a5b-9651-c46408ffaf9b" name="Changes" comment="Section 22.359(Working with Databases: SQL Injection and ANSI SQL): missing upload from previous, here is both instead; introduced to properties, environment variables, ResultSet,ResultSetMetaData; SQL injection; ANSI SQL and database agnostic code,">
-      <change afterPath="$PROJECT_DIR$/src/MusicDML.java" afterDir="false" />
+    <list default="true" id="37d2802a-5eaa-4a5b-9651-c46408ffaf9b" name="Changes" comment="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MusicDML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MusicDML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714645191795</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD,">
+      <created>1714700983280</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714700983280</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Section 22.359(Working with Databases: SQL Injection and ANSI SQL): missing upload from previous, here is both instead; introduced to properties, environment variables, ResultSet,ResultSetMetaData; SQL injection; ANSI SQL and database agnostic code," />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.359(Working with Databases: SQL Injection and ANSI SQL): missing upload from previous, here is both instead; introduced to properties, environment variables, ResultSet,ResultSetMetaData; SQL injection; ANSI SQL and database agnostic code," />
+    <MESSAGE value="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD," />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD," />
   </component>
 </project>
