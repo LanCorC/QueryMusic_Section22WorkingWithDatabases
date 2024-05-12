@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37d2802a-5eaa-4a5b-9651-c46408ffaf9b" name="Changes" comment="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD,">
+    <list default="true" id="37d2802a-5eaa-4a5b-9651-c46408ffaf9b" name="Changes" comment="Section 22.361(Working with Databases: Update, Delete Statements, and Inserting related records)&#10;&#10;dense coding segment; showing cascade of Statement.RETURN_GENERATED_KEYS as required for inserting data including multiple tables, hence new primary(and foreign) keys;&#10;&#10;for example, insert a new artist, new artist_id is foreign key in ALBUM, new ALBUM id is new foreign key in SONG entries">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MusicDML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MusicDML.java" afterDir="false" />
     </list>
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714700983280</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Section 22.361(Working with Databases: Update, Delete Statements, and Inserting related records)&#10;&#10;dense coding segment; showing cascade of Statement.RETURN_GENERATED_KEYS as required for inserting data including multiple tables, hence new primary(and foreign) keys;&#10;&#10;for example, insert a new artist, new artist_id is foreign key in ALBUM, new ALBUM id is new foreign key in SONG entries">
+      <created>1714703318508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714703318508</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +122,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Section 22.359(Working with Databases: SQL Injection and ANSI SQL): missing upload from previous, here is both instead; introduced to properties, environment variables, ResultSet,ResultSetMetaData; SQL injection; ANSI SQL and database agnostic code," />
     <MESSAGE value="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD," />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.360(Working with Databases: Statement.execute vs. Statement.executeQuery): &#10;&#10;set up MusicDML class and created methods for ease of calling SQL queries, CRUD," />
+    <MESSAGE value="Section 22.361(Working with Databases: Update, Delete Statements, and Inserting related records)&#10;&#10;dense coding segment; showing cascade of Statement.RETURN_GENERATED_KEYS as required for inserting data including multiple tables, hence new primary(and foreign) keys;&#10;&#10;for example, insert a new artist, new artist_id is foreign key in ALBUM, new ALBUM id is new foreign key in SONG entries" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.361(Working with Databases: Update, Delete Statements, and Inserting related records)&#10;&#10;dense coding segment; showing cascade of Statement.RETURN_GENERATED_KEYS as required for inserting data including multiple tables, hence new primary(and foreign) keys;&#10;&#10;for example, insert a new artist, new artist_id is foreign key in ALBUM, new ALBUM id is new foreign key in SONG entries" />
   </component>
 </project>
